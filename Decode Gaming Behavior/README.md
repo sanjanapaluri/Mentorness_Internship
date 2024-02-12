@@ -41,3 +41,16 @@ WHERE Level = 0
 ```
 
 #### Question 2: Find `Level1_code`wise average `Kill_Count` where `lives_earned` is 2, and at least 3 stages are crossed.
+
+```sql
+SELECT b.L1_code,AVG(a.kill_count) AS avg_kill_count
+
+FROM dbo.level_details2 a
+
+JOIN dbo.player_details b on a.P_ID = B.P_ID
+
+WHERE lives_earned = 2 AND Stages_crossed >=3
+
+GROUP BY b.L1_Code
+
+```
