@@ -28,3 +28,14 @@ In this internship, I had worked with a dataset related to a game. The dataset i
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 1. Extract `P_ID`, `Dev_ID`, `PName`, and `Difficulty_level` of all players at Level 0.
+
+```sql
+SELECT a.P_ID, a.Dev_ID, b.PName, a.Difficulty
+
+FROM dbo.level_details2 a 
+
+INNER JOIN dbo.player_details b on a.P_ID = B.P_ID
+
+WHERE Level = 0
+
+```
