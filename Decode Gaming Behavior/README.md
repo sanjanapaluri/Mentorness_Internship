@@ -85,7 +85,7 @@ HAVING COUNT(DISTINCT CONVERT(DATE,TimeStamp)) >1
 
 ```
 
-#### Question 4: Find `P_ID` and levelwise sum of `kill_counts` where `kill_count` is greater than the average kill count for Medium difficulty.
+#### Question 5: Find `P_ID` and levelwise sum of `kill_counts` where `kill_count` is greater than the average kill count for Medium difficulty.
 
 ```sql
 SELECT P_ID,Level,SUM(Kill_Count) AS tlt_count
@@ -103,3 +103,6 @@ HAVING SUM(Kill_Count) > (SELECT AVG(Kill_Count)
                              WHERE Difficulty = 'Medium')
 
 ```
+
+#### Question 6: Find `Level` and its corresponding `Level_code`wise sum of lives earned, excluding Level 0. Arrange in ascending order of level.
+
