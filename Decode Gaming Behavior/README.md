@@ -106,3 +106,17 @@ HAVING SUM(Kill_Count) > (SELECT AVG(Kill_Count)
 
 #### Question 6: Find `Level` and its corresponding `Level_code`wise sum of lives earned, excluding Level 0. Arrange in ascending order of level.
 
+```sql
+SELECT a.Level,b.L2_Code,SUM(a.Lives_Earned) AS tlt_earned
+
+FROM dbo.level_details2 a
+
+JOIN dbo.player_details b on a.P_ID = B.P_ID
+
+WHERE Level <> 0
+
+GROUP BY a.Level,b.L2_Code
+
+ORDER BY a.Level DESC
+
+```
