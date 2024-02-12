@@ -84,3 +84,20 @@ GROUP BY P_ID
 HAVING COUNT(DISTINCT CONVERT(DATE,TimeStamp)) >1
 
 ```
+
+#### Question 4: Find `P_ID` and levelwise sum of `kill_counts` where `kill_count` is greater than the average kill count for Medium difficulty.
+
+```sql
+SELECT P_ID,Level,SUM(Kill_Count) AS tlt_count
+
+FROM dbo.level_details2
+
+WHERE Difficulty = 'Medium'
+
+GROUP BY P_ID, Level
+
+HAVING SUM(Kill_Count) > (SELECT AVG(Kill_Count)
+                            FROM dbo.level_details2
+                             WHERE Difficulty = 'Medium')
+
+```
