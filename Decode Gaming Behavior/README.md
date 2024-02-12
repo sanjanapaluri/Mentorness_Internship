@@ -97,7 +97,9 @@ WHERE Difficulty = 'Medium'
 GROUP BY P_ID, Level
 
 HAVING SUM(Kill_Count) > (SELECT AVG(Kill_Count)
+
                             FROM dbo.level_details2
+
                              WHERE Difficulty = 'Medium')
 
 ```
