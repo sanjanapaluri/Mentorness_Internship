@@ -27,7 +27,7 @@ In this internship, I had worked with a dataset related to a game. The dataset i
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-1. Extract `P_ID`, `Dev_ID`, `PName`, and `Difficulty_level` of all players at Level 0.
+#### Question 1: Extract `P_ID`, `Dev_ID`, `PName`, and `Difficulty_level` of all players at Level 0.
 
 ```sql
 SELECT a.P_ID, a.Dev_ID, b.PName, a.Difficulty
@@ -40,4 +40,4 @@ WHERE Level = 0
 
 ```
 
-2. Find `Level1_code`wise average `Kill_Count` where `lives_earned` is 2, and at least 3 stages are crossed.
+#### Question 2: Find `Level1_code`wise average `Kill_Count` where `lives_earned` is 2, and at least 3 stages are crossed.
