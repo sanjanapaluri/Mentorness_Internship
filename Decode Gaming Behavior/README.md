@@ -39,3 +39,5 @@ INNER JOIN dbo.player_details b on a.P_ID = B.P_ID
 WHERE Level = 0
 
 ```
+
+2. Find `Level1_code`wise average `Kill_Count` where `lives_earned` is 2, and at least 3 stages are crossed.
