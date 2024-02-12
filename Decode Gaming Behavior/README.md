@@ -26,3 +26,5 @@ In this internship, I had worked with a dataset related to a game. The dataset i
 10. `lives_earned`: Extra Lives Earned
 
 ------------------------------------------------------------------------------------------------------------------------------------------
+
+1. 1. Extract `P_ID`, `Dev_ID`, `PName`, and `Difficulty_level` of all players at Level 0.
