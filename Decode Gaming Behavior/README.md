@@ -71,3 +71,16 @@ GROUP BY a.Difficulty
 ORDER BY tlt_cross DESC
 
 ```
+
+#### Question 4: Extract `P_ID` and the total number of unique dates for those players who have played games on multiple days.
+
+```sql
+SELECT P_ID,COUNT(DISTINCT CONVERT(DATE,TimeStamp)) AS uniqe_date
+
+FROM dbo.level_details2
+
+GROUP BY P_ID
+
+HAVING COUNT(DISTINCT CONVERT(DATE,TimeStamp)) >1
+
+```
