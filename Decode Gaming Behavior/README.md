@@ -54,3 +54,20 @@ WHERE lives_earned = 2 AND Stages_crossed >=3
 GROUP BY b.L1_Code
 
 ```
+
+#### Question 3: Find the total number of stages crossed at each difficulty level for Level 2 with players using `zm_series` devices. Arrange the result in decreasing order of the total number of stages crossed.
+
+```sql
+SELECT a.Difficulty ,SUM(a.Stages_crossed) AS tlt_cross
+
+FROM dbo.level_details2 a
+
+JOIN dbo.player_details b on a.P_ID = B.P_ID
+
+WHERE Level = 2 AND Dev_ID = 'zm_015'
+
+GROUP BY a.Difficulty
+
+ORDER BY tlt_cross DESC
+
+```
