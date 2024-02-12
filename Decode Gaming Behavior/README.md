@@ -4,4 +4,10 @@ In this internship, I had worked with a dataset related to a game. The dataset i
 
 # Dataset Description:
 ## Player Details Table:
-`P_ID`: Player ID
+
+1. `P_ID`: Player ID
+2. `PName`: Player Name
+3. `L1_status`: Level 1 Status
+4. `L2_status`: Level 2 Status
+5. `L1_code`: Systemgenerated Level 1 Code
+6. `L2_code`: Systemgenerated Level 2 Code
