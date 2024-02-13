@@ -277,3 +277,23 @@ WHERE rn > 1;
 ```
 
 ### Question 13: Extract the top 3 highest sums of scores for each `Dev_ID` and the corresponding `P_ID`.
+
+```sql
+WITH RankedScores AS (
+
+    SELECT P_ID, Dev_ID, SUM(score) AS total_score,
+
+           ROW_NUMBER() OVER (PARTITION BY Dev_ID ORDER BY SUM(score) DESC) AS rank
+
+    FROM Internship.dbo.level_details2
+
+    GROUP BY P_ID, Dev_ID
+)
+
+SELECT P_ID, Dev_ID, total_score
+
+FROM RankedScores
+
+WHERE rank <= 3;
+
+```
