@@ -201,3 +201,6 @@ INNER JOIN (
 ) AS min_login ON ld.P_ID = min_login.P_ID AND ld.start_datetime = min_login.min_start_datetime;
 
 ```
+#### Question 11:For each player and date, determine how many `kill_counts` were played by the player so far.
+a) Using window functions
+b) Without window functions
