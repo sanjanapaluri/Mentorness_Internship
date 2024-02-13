@@ -206,6 +206,8 @@ a) Using window functions
 
 b) Without window functions
 
+a) Using window functions
+
 ```sql
 SELECT P_ID, start_date, kill_count,
 
@@ -217,5 +219,35 @@ FROM (
     FROM Level_Details
 
 ) AS subquery;
+
+```
+
+b) Without window functions
+
+``sql
+SELECT
+    ld.P_ID,
+    
+    CONVERT(date, ld.TimeStamp) AS play_date,
+    
+    ld.kill_count,
+    
+    SUM(ld_inner.kill_count) AS cumulative_kill_counts
+    
+FROM Internship.dbo.level_details2 ld
+
+JOIN Internship.dbo.level_details2 ld_inner
+
+     ON ld.P_ID = ld_inner.P_ID
+     
+                            AND CONVERT(date, ld.TimeStamp) >= CONVERT(date, ld_inner.TimeStamp)
+                            
+GROUP BY
+
+    ld.P_ID, CONVERT(date, ld.TimeStamp), ld.kill_count
+    
+ORDER BY
+
+    ld.P_ID, CONVERT(date, ld.TimeStamp);
 
 ```
