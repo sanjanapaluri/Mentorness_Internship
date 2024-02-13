@@ -122,3 +122,34 @@ ORDER BY a.Level DESC
 ```
 
 #### Question 7: Find the top 3 scores based on each `Dev_ID` and rank them in increasing order using `Row_Number`. Display the difficulty as well.
+
+```sql
+SELECT Dev_ID,Score,Difficulty
+
+FROM ( SELECT Dev_ID,Score,Difficulty ,
+
+ROW_NUMBER() OVER(PARTITION BY Dev_ID ORDER BY Score DESC) AS r
+
+FROM Internship.dbo.level_details2) AS e
+
+WHERE r <=3
+
+```
+                                 OR 
+
+```sql
+WITH RankedScores AS (
+
+    SELECT ld.Dev_ID, ld.score, ld.difficulty,
+
+           ROW_NUMBER() OVER (PARTITION BY ld.Dev_ID ORDER BY ld.score DESC) AS rank
+
+    FROM Internship.dbo.level_details2 ld
+)
+SELECT Dev_ID, score, difficulty
+
+FROM RankedScores
+
+WHERE rank <= 3;
+
+```
