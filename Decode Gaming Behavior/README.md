@@ -166,3 +166,20 @@ GROUP BY Dev_ID
 ```
 
 #### Question 9: Find the top 5 scores based on each difficulty level and rank them in increasing orderusing `Rank`. Display `Dev_ID` as well.
+
+```sql
+WITH RankedScores AS (
+
+    SELECT Dev_ID, difficulty, score,
+
+           RANK() OVER (PARTITION BY difficulty ORDER BY score ASC) AS score_rank
+
+    FROM Internship.dbo.level_details2)
+
+SELECT Dev_ID, difficulty, score, score_rank
+
+FROM RankedScores
+
+WHERE score_rank <= 5;
+
+```
