@@ -251,3 +251,5 @@ ORDER BY
     ld.P_ID, CONVERT(date, ld.TimeStamp);
 
 ```
+
+### Question 12:Find the cumulative sum of stages crossed over `start_datetime` for each `P_ID`, excluding the most recent `start_datetime`.
