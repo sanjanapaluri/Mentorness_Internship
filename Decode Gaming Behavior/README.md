@@ -224,7 +224,7 @@ FROM (
 
 b) Without window functions
 
-``sql
+```sql
 SELECT
     ld.P_ID,
     
