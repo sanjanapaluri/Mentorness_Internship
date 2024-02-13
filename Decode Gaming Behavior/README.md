@@ -183,3 +183,4 @@ FROM RankedScores
 WHERE score_rank <= 5;
 
 ```
+#### Question 10:Find the device ID that is first logged in (based on `start_datetime`) for each player (`P_ID`). Output should contain player ID, device ID, and first login datetime.
