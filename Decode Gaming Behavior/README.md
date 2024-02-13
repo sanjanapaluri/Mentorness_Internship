@@ -297,3 +297,6 @@ FROM RankedScores
 WHERE rank <= 3;
 
 ```
+
+### Question 14:Find players who scored more than 50% of the average score, scored by the sum of scores for each `P_ID`.
+
