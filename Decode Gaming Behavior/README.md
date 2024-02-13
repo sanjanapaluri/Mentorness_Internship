@@ -153,3 +153,14 @@ FROM RankedScores
 WHERE rank <= 3;
 
 ```
+
+#### Question 8: Find the `first_login` datetime for each device ID.
+
+```sql
+SELECT Dev_ID,MIN(TimeStamp) AS first_loign
+
+FROM Internship.dbo.level_details2
+
+GROUP BY Dev_ID
+
+```
