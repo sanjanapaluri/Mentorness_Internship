@@ -203,4 +203,5 @@ INNER JOIN (
 ```
 #### Question 11:For each player and date, determine how many `kill_counts` were played by the player so far.
 a) Using window functions
+
 b) Without window functions
