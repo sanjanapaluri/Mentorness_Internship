@@ -164,3 +164,5 @@ FROM Internship.dbo.level_details2
 GROUP BY Dev_ID
 
 ```
+
+#### Question 9: Find the top 5 scores based on each difficulty level and rank them in increasing orderusing `Rank`. Display `Dev_ID` as well.
