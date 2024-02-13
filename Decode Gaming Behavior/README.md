@@ -205,3 +205,17 @@ INNER JOIN (
 a) Using window functions
 
 b) Without window functions
+
+```sql
+SELECT P_ID, start_date, kill_count,
+
+       SUM(kill_count) OVER (PARTITION BY P_ID ORDER BY start_date) AS cumulative_kill_counts
+FROM (
+
+    SELECT P_ID, CONVERT(date, start_time) AS start_date, kill_count
+
+    FROM Level_Details
+
+) AS subquery;
+
+```
