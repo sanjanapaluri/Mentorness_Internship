@@ -253,3 +253,25 @@ ORDER BY
 ```
 
 ### Question 12:Find the cumulative sum of stages crossed over `start_datetime` for each `P_ID`, excluding the most recent `start_datetime`.
+
+```sql
+WITH RankedLevels AS (
+
+    SELECT P_ID, TimeStamp, stages_crossed,
+
+           ROW_NUMBER() OVER (PARTITION BY P_ID ORDER BY TimeStamp DESC) AS rn
+
+    FROM Internship.dbo.level_details2
+)
+
+SELECT P_ID, TimeStamp, stages_crossed,
+
+       SUM(stages_crossed) OVER (PARTITION BY P_ID ORDER BY TimeStamp ASC ROWS BETWEEN
+
+	   UNBOUNDED PRECEDING AND 1 PRECEDING) AS cumulative_stages_crossed
+
+FROM RankedLevels
+
+WHERE rn > 1;
+
+```
