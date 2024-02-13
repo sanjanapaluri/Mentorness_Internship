@@ -275,3 +275,5 @@ FROM RankedLevels
 WHERE rn > 1;
 
 ```
+
+### Question 13: Extract the top 3 highest sums of scores for each `Dev_ID` and the corresponding `P_ID`.
