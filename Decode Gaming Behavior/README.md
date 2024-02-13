@@ -184,3 +184,20 @@ WHERE score_rank <= 5;
 
 ```
 #### Question 10:Find the device ID that is first logged in (based on `start_datetime`) for each player (`P_ID`). Output should contain player ID, device ID, and first login datetime.
+
+```sql
+SELECT ld.P_ID, ld.Dev_ID, ld.start_datetime AS first_login_datetime
+
+FROM Level_Details ld
+
+INNER JOIN (
+
+    SELECT P_ID, MIN(start_datetime) AS min_start_datetime
+
+    FROM Level_Details
+
+    GROUP BY P_ID
+
+) AS min_login ON ld.P_ID = min_login.P_ID AND ld.start_datetime = min_login.min_start_datetime;
+
+```
