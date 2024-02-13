@@ -120,3 +120,5 @@ GROUP BY a.Level,b.L2_Code
 ORDER BY a.Level DESC
 
 ```
+
+#### Question 7: Find the top 3 scores based on each `Dev_ID` and rank them in increasing order using `Row_Number`. Display the difficulty as well.
