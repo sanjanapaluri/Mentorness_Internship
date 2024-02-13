@@ -239,8 +239,8 @@ FROM Internship.dbo.level_details2 ld
 JOIN Internship.dbo.level_details2 ld_inner
 
      ON ld.P_ID = ld_inner.P_ID
-     
-                            AND CONVERT(date, ld.TimeStamp) >= CONVERT(date, ld_inner.TimeStamp)
+
+AND CONVERT(date, ld.TimeStamp) >= CONVERT(date, ld_inner.TimeStamp)
                             
 GROUP BY
 
