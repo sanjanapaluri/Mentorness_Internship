@@ -354,3 +354,5 @@ END;
 EXEC GetTopHeadshots @n = 3;
 
 ```
+
+![Screenshot (114)](https://github.com/sanjanapaluri/SQL_Projects/assets/127730680/2b4ec76b-66c9-4e30-87ce-b165acf29aa3)
