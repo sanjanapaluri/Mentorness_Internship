@@ -316,3 +316,5 @@ WHERE l.Score > 0.5 *(
 					 GROUP BY P_ID );
 
 ```
+
+### Question 15:Create a stored procedure to find the top `n` `headshots_count` based on each `Dev_ID` and rank them in increasing order using `Row_Number`. Display the difficulty as well.
