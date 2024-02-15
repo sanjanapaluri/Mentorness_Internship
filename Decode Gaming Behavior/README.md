@@ -318,3 +318,39 @@ WHERE l.Score > 0.5 *(
 ```
 
 ### Question 15:Create a stored procedure to find the top `n` `headshots_count` based on each `Dev_ID` and rank them in increasing order using `Row_Number`. Display the difficulty as well.
+
+```sql
+CREATE PROCEDURE GetTopHeadshots
+
+    @n INT
+
+AS
+
+BEGIN
+
+    SET NOCOUNT ON;
+
+    WITH TopHeadshots AS (
+
+        SELECT Dev_ID, difficulty, headshots_count,
+
+               ROW_NUMBER() OVER (PARTITION BY Dev_ID ORDER BY headshots_count DESC) AS rank
+
+        FROM Internship.dbo.level_details2
+
+    )
+
+    SELECT Dev_ID, difficulty, headshots_count
+
+    FROM TopHeadshots
+
+    WHERE rank <= @n
+
+    ORDER BY Dev_ID, rank;
+
+END;
+
+
+EXEC GetTopHeadshots @n = 3;
+
+```
