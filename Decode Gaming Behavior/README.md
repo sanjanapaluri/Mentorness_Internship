@@ -157,7 +157,7 @@ WHERE rank <= 3;
 #### Question 8: Find the `first_login` datetime for each device ID.
 
 ```sql
-SELECT Dev_ID,MIN(TimeStamp) AS first_loign
+SELECT Dev_ID,MIN(Start_datetime) AS first_loign
 
 FROM Internship.dbo.level_details2
 
@@ -211,10 +211,10 @@ a) Using window functions
 ```sql
 SELECT P_ID, start_date, kill_count,
 
-       SUM(kill_count) OVER (PARTITION BY P_ID ORDER BY start_date) AS cumulative_kill_counts
+       SUM(kill_count) OVER (PARTITION BY P_ID ORDER BY Start_datetime) AS cumulative_kill_counts
 FROM (
 
-    SELECT P_ID, CONVERT(date, start_time) AS start_date, kill_count
+    SELECT P_ID, CONVERT(date, Start_datetime) AS start_date, kill_count
 
     FROM Level_Details
 
@@ -240,11 +240,11 @@ JOIN Internship.dbo.level_details2 ld_inner
 
      ON ld.P_ID = ld_inner.P_ID
 
-AND CONVERT(date, ld.TimeStamp) >= CONVERT(date, ld_inner.TimeStamp)
+AND CONVERT(date, ld.Start_datetime) >= CONVERT(date, ld_inner.Start_datetime)
                             
 GROUP BY
 
-    ld.P_ID, CONVERT(date, ld.TimeStamp), ld.kill_count
+    ld.P_ID, CONVERT(date, ld.Start_datetime), ld.kill_count
     
 ORDER BY
 
@@ -257,16 +257,16 @@ ORDER BY
 ```sql
 WITH RankedLevels AS (
 
-    SELECT P_ID, TimeStamp, stages_crossed,
+    SELECT P_ID, Start_datetime, stages_crossed,
 
-           ROW_NUMBER() OVER (PARTITION BY P_ID ORDER BY TimeStamp DESC) AS rn
+           ROW_NUMBER() OVER (PARTITION BY P_ID ORDER BY Start_datetime DESC) AS rn
 
     FROM Internship.dbo.level_details2
 )
 
-SELECT P_ID, TimeStamp, stages_crossed,
+SELECT P_ID, Start_datetime, stages_crossed,
 
-       SUM(stages_crossed) OVER (PARTITION BY P_ID ORDER BY TimeStamp ASC ROWS BETWEEN
+       SUM(stages_crossed) OVER (PARTITION BY P_ID ORDER BY Start_datetime ASC ROWS BETWEEN
 
 	   UNBOUNDED PRECEDING AND 1 PRECEDING) AS cumulative_stages_crossed
 
