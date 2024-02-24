@@ -283,6 +283,9 @@ ORDER BY
 
 ```
 
+![Screenshot (127)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/a30ced88-dd77-47c9-be43-0ff4b03f56e3)
+
+
 ### Question 12:Find the cumulative sum of stages crossed over `start_datetime` for each `P_ID`, excluding the most recent `start_datetime`.
 
 ```sql
