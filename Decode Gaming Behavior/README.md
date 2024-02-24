@@ -209,19 +209,20 @@ WHERE score_rank <= 5;
 ```sql
 SELECT ld.P_ID, ld.Dev_ID, ld.start_datetime AS first_login_datetime
 
-FROM Level_Details ld
+FROM Internship.dbo.level_details2 ld
 
-INNER JOIN (
+INNER JOIN (SELECT P_ID, MIN(start_datetime) AS min_start_datetime
 
-    SELECT P_ID, MIN(start_datetime) AS min_start_datetime
+FROM Internship.dbo.level_details2
 
-    FROM Level_Details
-
-    GROUP BY P_ID
+GROUP BY P_ID
 
 ) AS min_login ON ld.P_ID = min_login.P_ID AND ld.start_datetime = min_login.min_start_datetime;
 
 ```
+
+![Screenshot (125)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/94f0a68d-7c8b-43e1-8585-3dd0c9cdb96c)
+
 #### Question 11:For each player and date, determine how many `kill_counts` were played by the player so far.
 a) Using window functions
 
