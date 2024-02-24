@@ -168,6 +168,8 @@ WHERE rank <= 3;
 
 ```
 
+![Screenshot (122)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/ebf1b9d7-130e-443b-b78f-d6971c9a68c8)
+
 #### Question 8: Find the `first_login` datetime for each device ID.
 
 ```sql
