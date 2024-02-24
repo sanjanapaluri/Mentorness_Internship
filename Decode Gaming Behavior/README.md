@@ -310,6 +310,9 @@ WHERE rn > 1;
 
 ```
 
+![Screenshot (128)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/f4a9e5e3-6eb4-4f9f-ae9c-d5c58e7c0489)
+
+
 ### Question 13: Extract the top 3 highest sums of scores for each `Dev_ID` and the corresponding `P_ID`.
 
 ```sql
@@ -331,6 +334,8 @@ FROM RankedScores
 WHERE rank <= 3;
 
 ```
+
+![Screenshot (129)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/475ab8d8-8b2c-453b-8421-6b7c52c3e84e)
 
 ### Question 14:Find players who scored more than 50% of the average score, scored by the sum of scores for each `P_ID`.
 
