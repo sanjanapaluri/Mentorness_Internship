@@ -181,6 +181,8 @@ GROUP BY Dev_ID
 
 ```
 
+![Screenshot (123)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/d6108740-31d8-4e94-b788-2ef85e3f063a)
+
 #### Question 9: Find the top 5 scores based on each difficulty level and rank them in increasing orderusing `Rank`. Display `Dev_ID` as well.
 
 ```sql
