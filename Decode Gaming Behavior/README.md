@@ -133,6 +133,8 @@ ORDER BY a.Level DESC
 
 ```
 
+![Screenshot (121)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/e1527caa-ab5f-4ea6-9776-507ef5b71de4)
+
 #### Question 7: Find the top 3 scores based on each `Dev_ID` and rank them in increasing order using `Row_Number`. Display the difficulty as well.
 
 ```sql
