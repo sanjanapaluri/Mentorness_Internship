@@ -356,6 +356,8 @@ WHERE l.Score > 0.5 *(
 
 ```
 
+![Screenshot (130)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/3ce49699-405b-4881-9659-2ae29840351d)
+
 ### Question 15:Create a stored procedure to find the top `n` `headshots_count` based on each `Dev_ID` and rank them in increasing order using `Row_Number`. Display the difficulty as well.
 
 ```sql
