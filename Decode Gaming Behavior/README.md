@@ -201,6 +201,9 @@ FROM RankedScores
 WHERE score_rank <= 5;
 
 ```
+
+![Screenshot (124)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/a8136150-f510-4760-baa3-b6d9087dbb7f)
+
 #### Question 10:Find the device ID that is first logged in (based on `start_datetime`) for each player (`P_ID`). Output should contain player ID, device ID, and first login datetime.
 
 ```sql
