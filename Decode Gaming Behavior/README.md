@@ -231,18 +231,27 @@ b) Without window functions
 a) Using window functions
 
 ```sql
-SELECT P_ID, start_date, kill_count,
+SELECT
 
-       SUM(kill_count) OVER (PARTITION BY P_ID ORDER BY Start_datetime) AS cumulative_kill_counts
-FROM (
+P_ID,
 
-    SELECT P_ID, CONVERT(date, Start_datetime) AS start_date, kill_count
+start_datetime,
 
-    FROM Level_Details
+kill_count,
 
-) AS subquery;
+SUM(kill_count) OVER (PARTITION BY P_ID ORDER BY start_datetime) AS total_kill_counts_so_far
+
+FROM
+
+Internship.dbo.level_details2
+
+ORDER BY
+
+P_ID, start_datetime;
 
 ```
+
+![Screenshot (126)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/0627ed5f-96c3-43d0-affb-bd608de8010e)
 
 b) Without window functions
 
