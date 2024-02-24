@@ -40,6 +40,8 @@ WHERE Level = 0
 
 ```
 
+![Screenshot (116)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/d8a27200-ec60-49de-9d9a-8568deaa828a)
+
 #### Question 2: Find `Level1_code`wise average `Kill_Count` where `lives_earned` is 2, and at least 3 stages are crossed.
 
 ```sql
