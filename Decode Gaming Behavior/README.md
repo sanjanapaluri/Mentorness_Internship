@@ -57,6 +57,9 @@ GROUP BY b.L1_Code
 
 ```
 
+![Screenshot (117)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/143384bc-59ad-48df-bb96-9a212d1222f8)
+
+
 #### Question 3: Find the total number of stages crossed at each difficulty level for Level 2 with players using `zm_series` devices. Arrange the result in decreasing order of the total number of stages crossed.
 
 ```sql
@@ -74,18 +77,23 @@ ORDER BY tlt_cross DESC
 
 ```
 
+![Screenshot (118)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/3bedc847-3f57-419f-9cc5-2f4fdd664f72)
+
 #### Question 4: Extract `P_ID` and the total number of unique dates for those players who have played games on multiple days.
 
 ```sql
-SELECT P_ID,COUNT(DISTINCT CONVERT(DATE,TimeStamp)) AS uniqe_date
+SELECT P_ID,COUNT(DISTINCT CONVERT(DATE,start_datetime)) AS uniqe_date
 
 FROM dbo.level_details2
 
 GROUP BY P_ID
 
-HAVING COUNT(DISTINCT CONVERT(DATE,TimeStamp)) >1
+HAVING COUNT(DISTINCT CONVERT(DATE,start_datetime)) >1
 
 ```
+
+![Screenshot (119)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/97e191a9-fe83-487b-ace3-aa8549a6183b)
+
 
 #### Question 5: Find `P_ID` and levelwise sum of `kill_counts` where `kill_count` is greater than the average kill count for Medium difficulty.
 
@@ -105,6 +113,8 @@ HAVING SUM(Kill_Count) > (SELECT AVG(Kill_Count)
                              WHERE Difficulty = 'Medium')
 
 ```
+
+![Screenshot (120)](https://github.com/sanjanapaluri/Mentorness_Internship/assets/127730680/759cb88c-c9d7-4918-b9a1-bd0cb262a50c)
 
 #### Question 6: Find `Level` and its corresponding `Level_code`wise sum of lives earned, excluding Level 0. Arrange in ascending order of level.
 
