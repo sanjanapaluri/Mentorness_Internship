@@ -32,11 +32,12 @@ In this internship, I had worked with a dataset related to a game. The dataset i
 ```sql
 SELECT a.P_ID, a.Dev_ID, b.PName, a.Difficulty
 
-FROM dbo.level_details2 a 
+FROM Internship.dbo.level_details2 a 
 
-INNER JOIN dbo.player_details b on a.P_ID = B.P_ID
+INNER JOIN Internship.dbo.player_details b on a.P_ID = b.P_ID
 
 WHERE Level = 0
+
 
 ```
 
